@@ -4,9 +4,9 @@ import AppBar from 'material-ui/AppBar';
 
 export default class Success extends Component {
   continue = e => {
+    const { nextStep } = this.props;
     e.preventDefault();
-    // PROCESS FORM //
-    this.props.nextStep();
+    nextStep();
   };
 
   back = e => {

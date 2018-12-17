@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 
 export default class FormPersonalDetails extends Component {
-    
+      
     continue = e => {
       e.preventDefault();
       this.props.nextStep();
