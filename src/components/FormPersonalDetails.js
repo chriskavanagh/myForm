@@ -6,15 +6,17 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 
 export default class FormPersonalDetails extends Component {
-      
+
     continue = e => {
+      const { nextStep } = this.props;
       e.preventDefault();
-      this.props.nextStep();
+      nextStep();
     };
   
     back = e => {
+      const {prevStep} = this.props;
       e.preventDefault();
-      this.props.prevStep();
+      prevStep();
     };
   
     render() {

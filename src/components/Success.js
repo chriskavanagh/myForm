@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 
 export default class Success extends Component {
+
   continue = e => {
     const { nextStep } = this.props;
     e.preventDefault();
@@ -10,8 +11,9 @@ export default class Success extends Component {
   };
 
   back = e => {
+    const {prevStep} = this.props;
     e.preventDefault();
-    this.props.prevStep();
+    prevStep();
   };
 
   render() {
