@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import FormUserDetails from './FormUserDetails';
 import FormPersonalDetails from './FormPersonalDetails';
 import Confirm from './Confirm';
@@ -39,40 +39,46 @@ export class UserForm extends Component {
       const { step } = this.state;
       const { firstName, lastName, email, occupation, city, bio } = this.state;
       const values = { firstName, lastName, email, occupation, city, bio };
+    return (
+        
+        <Fragment>
 
-      switch(step) {
-          case 1:
-              return (
-                 <FormUserDetails
+        {
+            step === 1 &&    
+                <FormUserDetails
                     nextStep={this.nextStep}
                     handleChange={this.handleChange}
                     values={values}
-                 />
-            );
-            case 2:
-                return (
-                    <FormPersonalDetails
-                      nextStep={this.nextStep}
-                      prevStep={this.prevStep}
-                      handleChange={this.handleChange}
-                      values={values}
-                    />
-                );
-            case 3:
-                return (
-                    <Confirm
-                      nextStep={this.nextStep}
-                      prevStep={this.prevStep}
-                      values={values}
-                    />                
-                );
-            case 4:
-                return <Success />
-            default:
-                return null
-      }
-    
-  }
-}
+                />
+        }
+
+        {
+            step === 2 &&
+                <FormPersonalDetails
+                    nextStep={this.nextStep}
+                    prevStep={this.prevStep}
+                    handleChange={this.handleChange}
+                    values={values}
+                />
+        }
+
+        {
+            step === 3 &&
+                <Confirm
+                    nextStep={this.nextStep}
+                    prevStep={this.prevStep}
+                    values={values}
+                />
+        }
+
+        {
+            step === 4 &&
+                <Success />
+        }            
+        
+        </Fragment>
+    )
+  } //end render
+} // end class
 
 export default UserForm;
