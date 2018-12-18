@@ -4,7 +4,7 @@ import FormPersonalDetails from './FormPersonalDetails';
 import Confirm from './Confirm';
 import Success from './Success';
 
-export class UserForm extends Component {
+export default class UserForm extends Component {
     
     state = {
         step:1,
@@ -40,7 +40,7 @@ export class UserForm extends Component {
       const { firstName, lastName, email, occupation, city, bio } = this.state;
       const values = { firstName, lastName, email, occupation, city, bio };
     return (
-        
+
         <Fragment>
 
         {
@@ -81,4 +81,4 @@ export class UserForm extends Component {
   } //end render
 } // end class
 
-export default UserForm;
+
