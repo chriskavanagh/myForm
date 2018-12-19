@@ -4,10 +4,11 @@ import FormPersonalDetails from './FormPersonalDetails';
 import Confirm from './Confirm';
 import Success from './Success';
 
+
 export default class UserForm extends Component {
     
     state = {
-        step:1,
+        step: 1,
         firstName: '',
         lastName: '',
         email: '',
@@ -32,7 +33,7 @@ export default class UserForm extends Component {
 
     handleChange = input => e => {
         this.setState({[input]: e.target.value});
-        {/*or  [e.target.name]: e.target.value */}
+        /** or  [e.target.name]: e.target.value */
     }
 
   render() {
